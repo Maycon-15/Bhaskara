@@ -41,8 +41,8 @@ namespace Bhaskara
 
             Console.WriteLine();
 
-            X1 = -B + (Math.Sqrt(Delta));
-            X2 = -B - (Math.Sqrt(Delta));
+            X1 = (-B + Math.Sqrt(Delta)) / (2*A);
+            X2 = (-B - Math.Sqrt(Delta)) / (2*A);
 
             if (A == 0){
                 Console.WriteLine("Não é uma equação de segundo grau!!");
@@ -54,8 +54,9 @@ namespace Bhaskara
             else
             {
                 Console.WriteLine("-----Resultados-----");
-                Console.WriteLine($"X1 = {X1 /2} e X2 = {X2 /2}");
+                Console.WriteLine($"X1 = {X1:N2} e X2 = {X2:N2}");
             }
+            Console.ReadKey();
 
 
         }
