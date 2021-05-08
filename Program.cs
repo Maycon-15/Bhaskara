@@ -31,34 +31,32 @@ namespace Bhaskara
 
             Console.WriteLine();
 
-            Console.WriteLine("Primeiro teremos que achar o Delta (∆) com a seguinte formula: ∆ = b² - 4ac");
-
-            Delta = (Math.Pow(B, 2)) - (4* A * C);
-
-            Console.WriteLine();
-
-            Console.WriteLine($"Delta é: {Delta}");
-
-            Console.WriteLine();
-
-            X1 = (-B + Math.Sqrt(Delta)) / (2*A);
-            X2 = (-B - Math.Sqrt(Delta)) / (2*A);
-
-            if (A == 0){
+            if (A == 0)
+            {
                 Console.WriteLine("Não é uma equação de segundo grau!!");
-            }
-
-            else if (Delta < 0){
-                Console.WriteLine($"Como Delta é = {Delta} a equação não possui raízes reais");
             }
             else
             {
-                Console.WriteLine("-----Resultados-----");
-                Console.WriteLine($"X1 = {X1:N2} e X2 = {X2:N2}");
+                Console.WriteLine();
+                Console.WriteLine("Primeiro teremos que achar o Delta (∆) com a seguinte formula: ∆ = b² - 4ac");
+                Delta = (Math.Pow(B, 2)) - (4* A * C);
+
+                Console.WriteLine();
+                Console.WriteLine($"Delta é: {Delta}");
+                
+                if (Delta < 0){
+                    Console.WriteLine($"Como Delta é = {Delta} a equação não possui raízes reais");
+                }
+                else
+                {
+                    X1 = (-B + Math.Sqrt(Delta)) / (2*A);
+                    X2 = (-B - Math.Sqrt(Delta)) / (2*A);
+ 
+                    Console.WriteLine("-----Resultados-----");
+                    Console.WriteLine($"X1 = {X1:N2} e X2 = {X2:N2}");
+                }
             }
             Console.ReadKey();
-
-
         }
     }
 }
